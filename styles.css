@@ -795,30 +795,8 @@ a { color: inherit; text-decoration: none; }
 
 .wwd.is-in .wwd__img { transform: none; }
 
-/* Hover swap. Each card names its picture through :has(), so the section
-   needs no script: the file's photo is the resting state, and a hovered or
-   focused card fades its own one in over it. Only the arriving picture is
-   faded — the resting one stays put underneath — so the cross never dips
-   through to the page grey. It also settles from a slight zoom, which reads
-   as the picture answering the card rather than just being replaced. */
-.wwd__img--2,
-.wwd__img--3 {
-  opacity: 0;
-  transition: opacity 0.5s ease,
-              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.wwd.is-in .wwd__img--2,
-.wwd.is-in .wwd__img--3 { transform: scale(1.04); }
-
-.wwd:has(.wcard--2:is(:hover, :focus-visible)) .wwd__img--2,
-.wwd:has(.wcard--3:is(:hover, :focus-visible)) .wwd__img--3 {
-  opacity: 1;
-  transform: none;
-}
-
 /* ==========================================================================
-   HIGHLIGHTS  (node 377:2365 — 4253 → 5184px)
+   HIGHLIGHTS  (verified file, node 521:2605 — 4253 → 5184px)
    The final file moves this band onto a 26px left edge (cards 26 → 1892)
    and the button 34px in from the right; both are taken as drawn.
    ========================================================================== */
@@ -847,7 +825,7 @@ a { color: inherit; text-decoration: none; }
   --d: 0.2s;
 }
 
-.news__more .cta__label { --label-w: 7.625rem; }   /* 122px */
+.news__more .cta__label { --label-w: 11.5rem; }   /* 184px — "inspire me more", 244 overall */
 
 .ncard {
   position: absolute;
@@ -869,10 +847,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 27.1875rem;         /* 435px */
   object-fit: cover;
-  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-.ncard:hover .ncard__thumb { transform: scale(1.03); }
 
 .ncard__body {
   display: flex;
@@ -1665,7 +1640,7 @@ a { color: inherit; text-decoration: none; }
     flex-direction: column;
     gap: 0.75rem;               /* 12px between cards */
     height: auto;
-    padding: 1.5625rem var(--gutter) 3.75rem;   /* 25 above the word, 60 to the banner */
+    padding: 1.5625rem var(--gutter) 4.875rem;  /* 25 above the word, 78 to the news title */
   }
 
   .wwd__title {
@@ -1814,10 +1789,9 @@ a { color: inherit; text-decoration: none; }
 
   /* --- let's talk -------------------------------------------------------- */
 
-  /* Straight after "what we do" while the news band is parked, so the gap is
-     that section's own 60px foot. */
+  /* 70 under the news band's button, as drawn. */
   .talk {
-    margin-top: 0;
+    margin-top: 4.375rem;       /* 70 */
     height: 31.25rem;           /* 500 */
   }
 

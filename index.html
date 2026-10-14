@@ -193,17 +193,62 @@
     </span>
   </a>
 
-  <!-- One picture per card: the first is the file's own, the other two take
-       over while their card is hovered or focused (see .wwd:has() in the CSS). -->
+  <!-- The file's one picture; the cards do not change it on hover. -->
   <figure class="wwd__photo">
-    <img class="wwd__img wwd__img--1" src="assets/img/wwd-photo.webp" width="1328" height="1760" alt="An athlete signing autographs for fans at the stadium rail" loading="lazy">
-    <img class="wwd__img wwd__img--2" src="assets/img/wwd-photo-2.webp" width="928" height="1005" alt="A sponsorship contract being signed in a stadium box" loading="lazy">
-    <img class="wwd__img wwd__img--3" src="assets/img/wwd-photo-3.webp" width="709" height="768" alt="A consultant going through a document with a client" loading="lazy">
+    <img class="wwd__img" src="assets/img/wwd-photo.webp" width="1328" height="1760" alt="An athlete signing autographs for fans at the stadium rail" loading="lazy">
   </figure>
 </section>
 
-<!-- HIGHLIGHTS — taken out for now at the client's request; the markup is
-     parked in _parked/news-section.html and its CSS is still in styles.css. -->
+<!-- HIGHLIGHTS (verified file: desktop node 521:2605, mobile 521:3254) — three
+     cards of a wider row; the design clips the rest at the right gutter, so
+     the row is cut there rather than padded. -->
+<section class="news" id="news">
+  <h2 class="news__title"><span class="rline"><span>Highlights</span></span></h2>
+
+  <a class="cta news__more rise" href="#news">
+    <span class="cta__icon">
+      <span class="cta__arrow" aria-hidden="true"></span>
+    </span>
+    <span class="cta__label">Inspire me more</span>
+  </a>
+
+  <!-- `display: contents` on desktop, where the cards keep their absolute
+       places; on a phone it becomes the sideways-scrolling strip. -->
+  <div class="news__row">
+    <article class="ncard ncard--1 rise">
+      <img class="ncard__thumb" src="assets/img/news-1.webp" width="1228" height="870" alt="" loading="lazy">
+      <div class="ncard__body">
+        <div class="ncard__meta">
+          <span class="chip chip--dark">Sponsorship</span>
+          <span class="chip chip--light">September 18, 2026</span>
+        </div>
+        <h3 class="ncard__title">How a padel athlete closed a six-figure crypto deal</h3>
+      </div>
+    </article>
+
+    <article class="ncard ncard--2 rise">
+      <img class="ncard__thumb" src="assets/img/news-2.webp" width="1228" height="870" alt="" loading="lazy">
+      <div class="ncard__body">
+        <div class="ncard__meta">
+          <span class="chip chip--dark">Athletes</span>
+          <span class="chip chip--light">September 9, 2026</span>
+        </div>
+        <h3 class="ncard__title">How a padel athlete closed a six-figure crypto deal</h3>
+      </div>
+    </article>
+
+    <article class="ncard ncard--3 rise">
+      <img class="ncard__thumb" src="assets/img/news-3.webp" width="1228" height="870" alt="" loading="lazy">
+      <div class="ncard__body">
+        <div class="ncard__meta">
+          <span class="chip chip--dark">Media</span>
+          <span class="chip chip--light">August 28, 2026</span>
+        </div>
+        <h3 class="ncard__title">How a padel athlete closed a six-figure crypto deal</h3>
+      </div>
+    </article>
+  </div>
+</section>
 
 <!-- LET'S TALK (node 159:2730) -->
 <section class="talk">
