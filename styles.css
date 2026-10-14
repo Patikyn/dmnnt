@@ -286,15 +286,13 @@ a { color: inherit; text-decoration: none; }
 .burger { display: none; }
 .hmenu  { display: contents; }
 
-/* The other mobile-only pieces: the 375 file draws a third pitch, a photo per
-   service card with its own tag run. None of
-   them exist at desktop widths. The news strip's wrapper dissolves the same
-   way the menu's does, so the desktop cards keep their absolute places. */
-/* Doubled classes on two of them: the desktop .bracket__lines and .wchips
-   rules come later in the file at the same weight and would switch them back
-   on. */
+/* The other mobile-only pieces: the 375 file draws a third pitch, and each
+   service card has its own wrapping tag run. Neither exists at desktop
+   widths. The news strip's wrapper dissolves the same way the menu's does,
+   so the desktop cards keep their absolute places. */
+/* Doubled classes on both: the desktop .bracket__lines and .wchips rules come
+   later in the file at the same weight and would switch them back on. */
 .bracket__lines.bracket__lines--mid,
-.wcard__img,
 .wchips.wchips--m { display: none; }
 
 .news__row { display: contents; }
@@ -384,7 +382,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: center;
   /* The button is sized by its label: 6 + 42 + 6 + label + 6. Figma draws
-     three widths of it — 176 here, 182 for "read all", 210 for "Contact Us" */
+     two widths of it — 176 here, 182 for "read all" */
   width: var(--label-w, 7.25rem);   /* 116px */
   height: 3.5rem;
   padding: 1rem 1.5rem;     /* 16px 24px */
@@ -403,7 +401,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   left: var(--gutter);
   right: var(--gutter);
-  top: 17.0625rem;          /* 273px */
+  top: 15.8125rem;          /* 253px — the final file lifts it 20 off the first draft's 273 */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -646,7 +644,7 @@ a { color: inherit; text-decoration: none; }
 .bpill--motorsport { left: 90.052083%;  top: 53.5625rem;  width: 8.4375rem; }   /* 1729 */
 
 /* ==========================================================================
-   WHAT WE DO  (final file, node 377:2575 — 2846 → 4253px)
+   WHAT WE DO  (verified file, node 521:2815 — 2846 → 4253px)
    Three service cards down the left half, one photograph on the right, and
    the 265px word behind both: the cards start 178px into the section, so
    they and the picture cover the lower third of the letters.
@@ -654,9 +652,7 @@ a { color: inherit; text-decoration: none; }
    The file's three "Bg" plates (#f2f2f2 at 48% on the #f0efef page) differ
    from the page by a single level of grey — invisible, so not built.
 
-   One content deviation: the file repeats the Sponsorship card's four tags in
-   all three cards, which is plainly the card copied twice. Each card keeps
-   its own tags here; the red/white pattern is the file's, card by card.
+   Tags, order and red/white pattern are the verified file's, card by card.
    ========================================================================== */
 
 .wwd {
@@ -974,10 +970,12 @@ a { color: inherit; text-decoration: none; }
   color: var(--bg);
 }
 
+/* 439 of the block's 531, centred: the verified file narrows the copy so it
+   breaks after "where" rather than after "stand." */
 .talk__body {
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 2.875rem;             /* 46px */
+  right: 2.875rem;
   top: 3.6875rem;             /* 59px */
   margin: 0;
   font-weight: 500;
@@ -998,13 +996,16 @@ a { color: inherit; text-decoration: none; }
   right: 0;
   top: 7.5625rem;             /* 121px */
   margin-inline: auto;
-  width: 13.125rem;           /* 210px */
+  /* 182 wide as drawn: 7 + 42 icon + 5.3 + 116 label + 12. */
+  width: 11.375rem;           /* 182px */
+  gap: 0.33125rem;            /* 5.3px */
+  padding: 0 0.75rem 0 0.4375rem;
   background: var(--bg);
   border-radius: 0.0828125rem; /* 1.325px */
   --d: 0.62s;
 }
 
-.cta--light .cta__label { --label-w: 9.375rem; color: #000; }   /* 150px */
+.cta--light .cta__label { color: #000; }
 
 /* Hovered, the light twin resolves to exactly the same state as the dark one:
    red plate, white icon block, red arrow. Its resting plate is the page grey,
@@ -1427,17 +1428,24 @@ a { color: inherit; text-decoration: none; }
     transform: translate3d(calc(var(--cx) - 0.25rem), var(--cy), 0);
   }
 
-  .hero__eyebrow {
+  /* The mobile frame captions the headline with the desktop's right-hand
+     aside, "Control your media presence", so the aside moves up into the
+     eyebrow's place and the eyebrow (the desktop's own copy and "With DMNNT")
+     stays a desktop thing. */
+  .hero__eyebrow { display: none; }
+
+  .hero__aside {
+    left: var(--gutter);
+    right: var(--gutter);
     top: 8.9375rem;             /* 143px */
-    display: block;
+    width: auto;
     font-size: 0.8125rem;       /* 13px */
+    text-align: left;
+    white-space: nowrap;
     --o: 0.5;
     opacity: 0.5;
+    --d: 0.36s;
   }
-
-  /* "With DMNNT" is not in the mobile frame — at this width the two halves
-     would collide, and the line reads as a caption for the headline anyway. */
-  .hero__eyebrow span:last-child { display: none; }
 
   .hero__title {
     right: var(--gutter);
@@ -1445,10 +1453,6 @@ a { color: inherit; text-decoration: none; }
     font-size: 2.139683rem;     /* 34.235px */
     line-height: 0.95;
   }
-
-  /* Repeated by the eyebrow above, and there is no right margin to hang it
-     in. */
-  .hero__aside { display: none; }
 
   /* 375 × 540 in the frame; as a ratio rather than a height so the video keeps
      its crop on a wider phone. */
@@ -1655,10 +1659,10 @@ a { color: inherit; text-decoration: none; }
 
   /* --- what we do -------------------------------------------------------- */
 
-  /* Each service is its own photo with its card under it, 4px apart — the
-     one shared picture on the right of the desktop is dropped. The tag runs
-     are the mobile file's own (order, colour and copy differ from the
-     desktop: "Audit — what you have now", "Roadmap — how to get there"). */
+  /* Three plain grey cards, 12px apart (verified file, node 521:3109): a red
+     rule across the top, the title and tags pinned to the foot, no photo and
+     no strapline. The shared picture on the right of the desktop is dropped
+     too. The tag runs are the mobile file's own colouring. */
   .wwd {
     display: flex;
     flex-direction: column;
@@ -1677,50 +1681,40 @@ a { color: inherit; text-decoration: none; }
 
   .wwd__photo { display: none; }
 
+  /* 252 tall as drawn. The title and tags take the foot with an auto margin
+     rather than the file's fixed 124 gap, so a tag run that wraps to a third
+     line on a narrow phone grows the card instead of spilling out of it. */
   .wcard {
     position: relative;         /* above the title it overlaps */
     left: 0;
     top: 0;
+    display: flex;
+    flex-direction: column;
     width: auto;
     height: auto;
-    padding: 0 0.75rem 0.75rem;
+    min-height: 15.75rem;       /* 252 */
+    padding: 0.75rem;           /* 12 */
     border-radius: 0.125rem;
   }
 
-  /* The photo runs to the card's edges and keeps a 4px strip of page grey
-     under it (the shadow), so photo and card read as two plates, as drawn. */
-  .wcard__img {
-    display: block;
-    width: calc(100% + 1.5rem);
-    max-width: none;
-    height: auto;
-    margin: 0 -0.75rem 1rem;
-    aspect-ratio: 351 / 303;
-    object-fit: cover;
-    box-shadow: 0 0.25rem 0 var(--bg);
+  /* 330 wide on a 327 content box — the file runs it 3px into the right
+     padding, kept. */
+  .wcard::before {
+    content: "";
+    height: 0.25rem;            /* 4 */
+    margin-right: -0.1875rem;
+    background: var(--red);
   }
 
-  .wcard__head,
+  .wcard__head { display: none; }
+
   .wcard__title,
   .wchips { position: static; }
 
-  .wcard__head {
-    align-items: center;
-    gap: 0.75rem;
-    font-weight: 500;
-    font-size: 0.8125rem;       /* 13px */
-    line-height: 1;
-    letter-spacing: 0.04em;
-  }
-
-  .wcard__no { font-weight: 500; letter-spacing: 0.04em; }
-
-  /* the file breaks this strapline after "where" */
-  .wcard--3 .wcard__head > span:first-child { max-width: 10.5625rem; }
-
   .wcard__title {
     display: block;
-    margin-top: 2rem;           /* 32 */
+    margin-top: auto;
+    padding-top: 1.5rem;        /* never closer than this to the rule */
     font-size: 1.25rem;         /* 20 */
   }
 
@@ -1845,7 +1839,8 @@ a { color: inherit; text-decoration: none; }
   }
 
   .talk__title { font-size: 2rem; white-space: normal; }
-  .talk__body  { top: 2.375rem; font-size: 0.8125rem; }   /* 13px */
+  /* the full 277 of the block here; only the desktop narrows it */
+  .talk__body  { left: 0; right: 0; top: 2.375rem; font-size: 0.8125rem; }   /* 13px */
 
   /* 210 wide and centred in the block, as the file has it: 7 + 42 icon + 5 +
      132 label + 24. */
