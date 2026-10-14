@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DMNNT — Build your name. Deals follow.</title>
+<meta name="description" content="DMNNT is a sports sponsorship and PR agency. We don't promise reach. We build deals.">
+<!-- Both families are self-hosted; the two the first screen is set in are
+     fetched before the stylesheet asks for them. -->
+<link rel="preload" href="assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/NeutralFaceBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero__rules" aria-hidden="true">
+    <span class="rule rule--v"></span>
+    <span class="rule rule--h"></span>
+    <span class="crosshair crosshair--v"></span>
+    <span class="crosshair crosshair--h"></span>
+  </div>
+
+  <header class="header">
+    <a class="logo rise" href="/" aria-label="DMNNT — Dominant Promotion">
+      <img src="assets/img/logo-dmnnt.webp" alt="DMNNT">
+    </a>
+
+    <!-- Only ever seen on mobile; the design draws the icon but no open state,
+         so the panel below it is mine. -->
+    <button class="burger rise" type="button" aria-expanded="false"
+            aria-controls="hmenu" aria-label="Menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <!-- `display: contents` on desktop, so the nav and the button keep their
+         own absolute positions there and only become a panel on mobile. -->
+    <div class="hmenu" id="hmenu">
+      <nav class="nav rise" aria-label="Main">
+        <a href="#pr-media">PR &amp; Media</a>
+        <a href="#sponsorship">Sponsorship</a>
+      </nav>
+
+      <a class="cta rise" href="https://wa.me/380977044447">
+        <span class="cta__icon">
+          <span class="cta__arrow" aria-hidden="true"></span>
+        </span>
+        <span class="cta__label">Text Me</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="hero__eyebrow rise">
+    <span>Where athletes meet sponsors</span>
+    <span>With DMNNT</span>
+  </div>
+
+  <h1 class="hero__title">
+    <span class="rline"><span>Build your name</span></span>
+    <span class="rline"><span>Deals follow</span></span>
+  </h1>
+
+  <p class="hero__aside rise">Control your media presence</p>
+</section>
+
+<figure class="hero-media">
+  <!-- AV1 first (about a third of the size) for the browsers that decode it;
+       everything else, older Safari included, falls through to H.264. -->
+  <video poster="assets/img/hero-poster.webp"
+         autoplay muted loop playsinline preload="auto"
+         disablepictureinpicture aria-label="DMNNT">
+    <source src="assets/video/hero-av1.mp4" type='video/mp4; codecs="av01.0.08M.08"'>
+    <source src="assets/video/hero-h264.mp4" type="video/mp4">
+  </video>
+</figure>
+
+<section class="bracket" data-text-in="0.55" data-reveal-in="0.75">
+  <span class="bracket__lines bracket__lines--left" aria-hidden="true">
+    <img src="assets/img/line-left.svg" width="554" height="745" alt="">
+  </span>
+  <span class="bracket__lines bracket__lines--right" aria-hidden="true">
+    <img src="assets/img/line-right.svg" width="649" height="745" alt="">
+  </span>
+  <!-- mobile only: the third pitch the 375 file draws behind the heading -->
+  <span class="bracket__lines bracket__lines--mid" aria-hidden="true"></span>
+
+  <h2 class="bracket__title">
+    <span class="rline"><span>DMNNT is a sports</span></span>
+    <span class="rline"><span>sponsorship and PR agency</span></span>
+    <span class="rline"><span>We don&rsquo;t promise reach</span></span>
+    <span class="rline"><span>We build deals</span></span>
+  </h2>
+
+  <span class="bpill bpill--grey bpill--fmcg">FMCG</span>
+  <span class="bpill bpill--grey bpill--fintech">Fintech</span>
+  <span class="bpill bpill--grey bpill--lifestyle">Lifestyle</span>
+  <span class="bpill bpill--grey bpill--tech">Tech brands</span>
+  <span class="bpill bpill--grey bpill--digital">Digital Entertainment</span>
+
+  <span class="bpill bpill--red bpill--tennis">Tennis</span>
+  <span class="bpill bpill--red bpill--combat">Combat sports</span>
+  <span class="bpill bpill--red bpill--football">Football</span>
+  <span class="bpill bpill--red bpill--padel">Padel</span>
+  <span class="bpill bpill--red bpill--motorsport">Motorsport</span>
+
+  <span class="bracket__label bracket__label--left rise"><span>Who we close with</span></span>
+  <span class="bracket__label bracket__label--right rise"><span>Where we work</span></span>
+</section>
+
+<!-- WHAT WE DO (final file, node 377:2575) — three service cards stacked down
+     the left half, one photograph filling the right, and the 265px word laid
+     behind both so the cards and the picture cut its foot off.
+     Every card goes to the same place the header button does: there are no
+     service pages to link to, and the mark should not promise one. -->
+<section class="wwd" id="pr-media">
+  <!-- No line mask: at 265px the word is the section's backdrop rather than a
+       line of type, and the cards rising in front of it are the entrance. -->
+  <h2 class="wwd__title">What we do</h2>
+
+  <a class="wcard wcard--1" href="https://wa.me/380977044447">
+    <img class="wcard__img" src="assets/img/wwd-photo.webp" width="1328" height="1760" alt="" loading="lazy">
+    <span class="wcard__head">
+      <span>We build your name</span>
+      <span class="wcard__no">01</span>
+    </span>
+    <span class="wcard__title">PR &amp; Media Representation</span>
+    <span class="wchips wchips--d">
+      <span class="wrow">
+        <span class="wchip wchip--light">LinkedIn &amp; Wikipedia</span>
+        <span class="wchip wchip--red">Media training</span>
+      </span>
+      <span class="wrow">
+        <span class="wchip wchip--red">Strategy</span>
+        <span class="wchip wchip--light">Podcasts &amp; interviews</span>
+      </span>
+    </span>
+    <span class="wchips wchips--m">
+      <span class="wchip wchip--light">Strategy</span>
+      <span class="wchip wchip--red">Podcasts &amp; interviews</span>
+      <span class="wchip wchip--red">Media training</span>
+      <span class="wchip wchip--light">LinkedIn &amp; Wikipedia</span>
+    </span>
+  </a>
+
+  <a class="wcard wcard--2" id="sponsorship" href="https://wa.me/380977044447">
+    <img class="wcard__img" src="assets/img/wwd-photo-2.webp" width="928" height="1005" alt="" loading="lazy">
+    <span class="wcard__head">
+      <span>We find you the money</span>
+      <span class="wcard__no">02</span>
+    </span>
+    <span class="wcard__title">Sponsorship Engineering</span>
+    <span class="wchips wchips--d">
+      <span class="wrow">
+        <span class="wchip wchip--red">Deal closed, deal activated</span>
+        <span class="wchip wchip--light">Partner search</span>
+      </span>
+      <span class="wrow">
+        <span class="wchip wchip--light">Strategy — who your ideal sponsor is</span>
+        <span class="wchip wchip--red">Negotiation</span>
+      </span>
+    </span>
+    <!-- the mobile file's shortened run -->
+    <span class="wchips wchips--m">
+      <span class="wchip wchip--red">Strategy</span>
+      <span class="wchip wchip--light">Partner search</span>
+      <span class="wchip wchip--red">Negotiation</span>
+      <span class="wchip wchip--light">Deal activated</span>
+    </span>
+  </a>
+
+  <a class="wcard wcard--3" href="https://wa.me/380977044447">
+    <img class="wcard__img" src="assets/img/wwd-photo-3-m.webp" width="1053" height="909" alt="" loading="lazy">
+    <span class="wcard__head">
+      <span>We tell you where you actually stand</span>
+      <span class="wcard__no">03</span>
+    </span>
+    <span class="wcard__title">Consulting</span>
+    <span class="wchips wchips--d">
+      <span class="wrow">
+        <span class="wchip wchip--light">Audit</span>
+        <span class="wchip wchip--red">Strategy — where to grow</span>
+      </span>
+      <span class="wrow">
+        <span class="wchip wchip--red">One document. No guesswork</span>
+        <span class="wchip wchip--light">Roadmap</span>
+      </span>
+    </span>
+    <!-- the mobile file's shortened run -->
+    <span class="wchips wchips--m">
+      <span class="wchip wchip--red">Audit</span>
+      <span class="wchip wchip--light">Strategy</span>
+      <span class="wchip wchip--red">Roadmap</span>
+      <span class="wchip wchip--light">One document. No guesswork</span>
+    </span>
+  </a>
+
+  <!-- One picture per card: the first is the file's own, the other two take
+       over while their card is hovered or focused (see .wwd:has() in the CSS). -->
+  <figure class="wwd__photo">
+    <img class="wwd__img wwd__img--1" src="assets/img/wwd-photo.webp" width="1328" height="1760" alt="An athlete signing autographs for fans at the stadium rail" loading="lazy">
+    <img class="wwd__img wwd__img--2" src="assets/img/wwd-photo-2.webp" width="928" height="1005" alt="A sponsorship contract being signed in a stadium box" loading="lazy">
+    <img class="wwd__img wwd__img--3" src="assets/img/wwd-photo-3.webp" width="709" height="768" alt="A consultant going through a document with a client" loading="lazy">
+  </figure>
+</section>
+
+<!-- HIGHLIGHTS — taken out for now at the client's request; the markup is
+     parked in _parked/news-section.html and its CSS is still in styles.css. -->
+
+<!-- LET'S TALK (node 159:2730) -->
+<section class="talk">
+  <span class="talk__bg" aria-hidden="true">
+    <img src="assets/img/cta-bg.webp" alt="">
+  </span>
+
+  <div class="talk__inner">
+    <h2 class="talk__title"><span class="rline"><span>[&nbsp;Let&rsquo;s talk&nbsp;]</span></span></h2>
+    <p class="talk__body rise">Got an athlete to build or a brand to place? Tell us
+      where you stand. We&rsquo;ll tell you what it takes to close the deal.</p>
+    <a class="cta cta--light rise" href="https://wa.me/380977044447">
+      <span class="cta__icon">
+        <span class="cta__arrow" aria-hidden="true"></span>
+      </span>
+      <span class="cta__label">Contact Us</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER (node 159:2747) — a hairline grid with two crosshairs on its
+     intersections, the same device the first screen opens with. -->
+<footer class="site-footer">
+  <span class="frule frule--h1" aria-hidden="true"></span>
+  <span class="frule frule--h2" aria-hidden="true"></span>
+  <span class="frule frule--v1" aria-hidden="true"></span>
+  <span class="frule frule--v2" aria-hidden="true"></span>
+
+  <span class="fcross fcross--low" aria-hidden="true"></span>
+  <span class="fcross fcross--high" aria-hidden="true"></span>
+
+  <div class="fmail rise">
+    <span class="fmail__label">Email</span>
+    <a class="fmail__value" href="mailto:ceo@dmnnt.pro">ceo@dmnnt.pro</a>
+  </div>
+
+  <div class="fcontact rise">
+    <span class="fcontact__label">contact</span>
+    <a href="https://instagram.com/" rel="noopener">Instagram</a>
+    <a href="https://linkedin.com/" rel="noopener">Linkedin</a>
+  </div>
+
+  <span class="fswap" aria-hidden="true">
+    <img class="fswap__img fswap__img--car" src="assets/img/footer-car.webp" width="261" height="105" alt="">
+    <img class="fswap__img fswap__img--racket" src="assets/img/footer-racket.webp" width="741" height="555" alt="">
+    <img class="fswap__img fswap__img--ball is-on" src="assets/img/footer-ball.webp" width="360" height="350" alt="">
+    <img class="fswap__img fswap__img--glove" src="assets/img/footer-glove.webp" width="471" height="456" alt="">
+    <img class="fswap__img fswap__img--moto" src="assets/img/footer-moto.webp" width="570" height="378" alt="">
+  </span>
+
+  <p class="fword fword--left"><span class="rline"><span>dominant</span></span></p>
+  <p class="fword fword--right"><span class="rline"><span>promotion</span></span></p>
+
+  <p class="fcopy rise">&copy; 2026 DMNNT. All rights reserved.</p>
+  <a class="flegal flegal--terms rise" href="#terms">Terms and conditions</a>
+  <a class="flegal flegal--privacy rise" href="#privacy">Privacy policy</a>
+  <p class="fby rise">Website design by <b>Nadnova</b></p>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>

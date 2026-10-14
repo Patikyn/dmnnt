@@ -1,0 +1,4 @@
+.DS_Store
+# Source renders the site never loads (the page plays hero-av1 / hero-h264)
+assets/video/hero.mp4
+assets/video/hero-c2.mp4
